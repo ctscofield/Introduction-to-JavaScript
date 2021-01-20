@@ -17,7 +17,10 @@ Do the following:
 
    HINT: no function required
 */
-
+const votingAge = 20
+if (votingAge >= 18) {
+  console.log(true);
+} 
 
 
 /*
@@ -30,8 +33,12 @@ Do the following:
 
    HINT: no function required
 */
-
-
+let thing1 = 2
+let thing2 = 1
+if(thing1 > thing2){
+ thing2 = thing2 + 1;
+ console.log(thing1, thing2)
+}
 
 
 
@@ -45,7 +52,9 @@ Do the following:
 
    HINT: look up the Number method
 */
-
+let year = "1999"
+year = Number("1999");
+console.log(year);
 
 
 
@@ -74,10 +83,11 @@ Do the following:
    3. Return the newly calculated age
 */
 
-function dogYears(/*add your code here*/){
-    /*add your code here*/
+function dogYears(humanYears){
+    return(humanYears * 7)
 }
-
+// dogYears()
+console.log(dogYears(5))
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -107,9 +117,28 @@ Use the hungryDog function and feeding requirements below to do the following:
   NOTE: If done correctly, a weight of 15 lbs and age of 1 year would return 0.44999999999999996
 */  
 
-function hungryDog(/*add your code here*/){
-    /*add your code here*/
-  }
+function hungryDog(weight, age){
+    if (age >= 1){
+      if (weight <= 5){
+        return .05 * weight;
+      } else if (6 >= weight && 10 <= weight){
+        return weight * .04;
+      } else if (weight >= 11 && weight <= 15){
+        return weight * .03;
+      } else {
+        return weight * .02
+      }
+    } else {
+      //less than a year//
+      if (age >= 2/12 && age<= 4/12){
+        return weight * .1;
+      } else if (age > 4/12 && age <= 7/12){//I chose to have 4 months included in the bigger category
+        return weight * .05;
+      } else {
+        return weight * .04
+      }
+    }
+}
 
 
 
@@ -133,10 +162,36 @@ Use the game function below to do the following:
   
   HINT: Remember that the order in which we pass in our arguments matters when it comes to parameters
 */
+let computer = Math.random();
 
 function game(user, computer){
     /*add your code here*/
-}
+  if (computer == "rock"){//computer chose rock
+    if (user == "rock"){//User chose rock
+      return "it's a tie";
+    }else if (user == "paper"){//User chose Paper
+      return "you win!";
+    } else {//User chose scissors
+      return "you lose!";
+    }
+  } else if (computer == "paper"){//computer chose paper
+    if (user == "rock"){//User chose rock
+      return "you lose!";
+    }else if (user == "paper"){//User chose Paper
+      return "it's a tie";
+    } else {//User chose scissors
+      return "you win!";
+    }
+  } else {//computer chose scissors
+    if (user == "rock"){//User chose rock
+      return "you win!";
+    }else if (user == "paper"){//User chose Paper
+      return "you lose!";
+    } else {//User chose scissors
+      return "it's a tie";
+    }
+  }
+}  
   
   
 
@@ -151,11 +206,9 @@ Using the miles function below do the following:
   3. Return the number of miles
 */
 
-function miles(/*add your code here*/){
-    /*add your code here*/
+function miles(kilometers){
+    return kilometers * .621371;
   }
-
-
 
 //Task 5b - Feet to CM
 /*
@@ -165,8 +218,8 @@ Using the feet function below do the following:
   3. Return number of feet
 */
 
-function feet(/*add your code here*/){
-    /*add your code here*/
+function feet(cm){
+    return cm / 30.48;
   }
  
 
@@ -181,8 +234,8 @@ Using the annoyingSong function below do the following:
       "{number} bottles of soda on the wall, {number} bottles of soda, take one down pass it around {number left over} bottles of soda on the wall"
 */
 
-function annoyingSong(/*add your code here*/){
-        /*add your code here*/
+function annoyingSong(startNum){
+    return (startNum + " bottles of soda on the wall, " + startNum +" bottles of soda, take one down pass it around " + (startNum - 1) + " bottles of soda on the wall");  
   }
 
 
@@ -201,9 +254,19 @@ Using the grade function below do the following:
    below should return 'you got an F'
 */
   
-function grade(/*Your Code here */){
-  /*Your Code here */
+function grade(letterGrade){
+  if (letterGrade >= 90){
+    return "you got an A";
+  } else if (letterGrade >= 80 && letterGrade <= 89){
+    return "you got a B";
+  } else if (letterGrade >= 70 && letterGrade <= 79){
+    return "you got a C";
+  } else if (letterGrade >= 60 && letterGrade <= 69){
+    return "you got a D";
+  }else {
+    return "you got an F";
   }
+}
   
   
 
@@ -226,12 +289,12 @@ function vowelCounter(/*add your code here*/) {
 
 
 
-/*🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑*/
+// /*🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑*/
 function foo(){
     //console.log('its working');
     return 'bar';
 }
-/*🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 Don't touch the code after this line! 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑*/
+// /*🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 Don't touch the code after this line! 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑*/
 export default{
     foo,
     multiply,
